@@ -1,0 +1,17 @@
+# Use official Python slim image
+FROM python:3.11-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy all files to container
+COPY . /app
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose port your app runs on
+EXPOSE 8082
+
+# Start the app with uvicorn
+CMD ["uvicorn", "webui:app", "--host", "0.0.0.0", "--port", "8082"]
