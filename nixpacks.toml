@@ -1,4 +1,5 @@
 
+
 [phases.setup]
 nixPkgs = ["python311", "pip"]
 
@@ -6,4 +7,4 @@ nixPkgs = ["python311", "pip"]
 cmds = ["pip install -r requirements.txt"]
 
 [phases.start]
-cmd = "uvicorn webui:app --host 0.0.0.0 --port 8082"
+cmds = ["uvicorn webui:app --host 0.0.0.0 --port 8082"]
